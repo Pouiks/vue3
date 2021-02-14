@@ -61,8 +61,16 @@ ul{
   margin-left: 100px;
   text-align: left;
   display: flex;
+  flex-direction: column;
   
 
+}
+li{
+  width: 100%;
+  margin: 0.3rem 0;
+  padding: 0.3rem 0;
+  border: 1px solid rgb(211, 211, 211);
+  border-radius: 5px;
 }
 button{
   margin: 0 0.3rem;
