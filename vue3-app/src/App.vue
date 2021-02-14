@@ -4,7 +4,7 @@
 <br>
 <br>
 
-<TechnoList :technos="technos" />
+<TechnoList :technos="technos" @delete-techno="deleteTechno" />
 
 </template>
 
@@ -22,6 +22,12 @@ export default {
   },
 
   setup(){
+    let deleteTechno = (tech) => {
+      console.log('App | deleteTechno() | tech',tech);
+      // On garde uniquement les id differente de celle sur lequel on clique.
+      technos.value = technos.value.filter(t => t.id !== tech.id);
+    }
+
     let technos = ref([]);
 
     const saveTechno = (data) => {
@@ -31,7 +37,9 @@ export default {
     }
     return {
       saveTechno,
-      technos
+      technos,
+      deleteTechno
+
     }
   }
 }
