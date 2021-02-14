@@ -1,15 +1,25 @@
 <template>
 <h1>Veille techno</h1>
-<Form /> 
+<Form @add="saveTechno" /> 
 </template>
 
 <script>
 
 import Form from '@/components/Form';
 export default {
+
   name: 'App',
   components: {
     Form,
+  },
+
+  setup(){
+    const saveTechno = (data) => {
+      console.log("App | saveTechno() | data ", data);
+    }
+    return {
+      saveTechno
+    }
   }
 }
 </script>

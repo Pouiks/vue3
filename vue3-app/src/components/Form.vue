@@ -11,12 +11,13 @@
 <script>
 import { ref } from 'vue';
 export default {
-    setup(){
+    setup(props, ctx){
             let techToLearn = ref("");
 
             const addTechno = () => {
 
                 console.log("form | addTechno() | techToLearn", techToLearn.value);
+                ctx.emit("add", techToLearn.value)
                 techToLearn.value = '';
             }
         return {
