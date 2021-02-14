@@ -1,5 +1,6 @@
 <template>
-<h3>Toutes les technos que je dois ajouter à ma veille</h3>
+<h3>Les technos que je dois ajouter à ma veille</h3>
+<p>Nombre de techno{{technos.length > 1 ? "s" : null}} : {{technos.length}}</p>
   <ul>
   <li v-for="tech in technos" :key="tech.id" >
     <button @click="editTechno(tech)">Modif</button>
@@ -13,7 +14,6 @@
     <span v-else>{{tech.techno}}</span>
   </li>
 </ul>
-<p>Nombre de techno{{technos.length > 1 ? "s" : null}} : {{technos.length}}</p>
 </template>
 
 <script>
@@ -27,7 +27,7 @@ export default {
     }
   },
   setup(props, {emit}) {
-    let technoToEdit = ref(null);
+    let technoToEdit = ref("");
 
     let deleteTechno = (tech) => {
       emit('delete-Techno', tech);
