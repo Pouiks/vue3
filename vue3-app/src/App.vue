@@ -3,22 +3,22 @@
 <Form @add="saveTechno" /> 
 <br>
 <br>
-<ul>
-  <li v-for="tech in technos" :key="tech.id">
-    {{tech.techno}}
-  </li>
-</ul>
+
+<TechnoList :technos="technos" />
+
 </template>
 
 <script>
 
 import Form from '@/components/Form';
+import TechnoList from '@/components/TechnoList';
 import { ref } from 'vue';
 export default {
 
   name: 'App',
   components: {
     Form,
+    TechnoList
   },
 
   setup(){
