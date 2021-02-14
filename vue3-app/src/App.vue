@@ -4,7 +4,7 @@
 <br>
 <br>
 
-<TechnoList :technos="technos" @delete-techno="deleteTechno" />
+<TechnoList :technos="technos" @delete-techno="deleteTechno" @edit-techno="editTechno"/>
 
 </template>
 
@@ -22,6 +22,10 @@ export default {
   },
 
   setup(){
+    const editTechno = (tech) => {
+      technos.value = technos.value.map(t => t.id !== tech.id ? t : tech);
+    }
+
     let deleteTechno = (tech) => {
       console.log('App | deleteTechno() | tech',tech);
       // On garde uniquement les id differente de celle sur lequel on clique.
@@ -38,7 +42,8 @@ export default {
     return {
       saveTechno,
       technos,
-      deleteTechno
+      deleteTechno,
+      editTechno
 
     }
   }
@@ -52,11 +57,9 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  width: 50%;
+  margin: 0 auto;
 
 }
 
-ul{
-  list-style: none;
-}
 </style>
