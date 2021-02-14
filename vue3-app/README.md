@@ -1,4 +1,8 @@
-# vue3-app
+# Initiation to Vue3
+
+First Projet with Vue3. Adding the value off the form and give it to the parents component
+
+
 
 ## Project setup
 ```
