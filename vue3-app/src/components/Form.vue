@@ -4,7 +4,7 @@
         <br>
         <input type="text" name="techno" v-model="techToLearn">
         <br>
-        <button type="submit" @click="addTechno" >Ajouter</button>
+        <button type="submit" >Ajouter</button>
     </form>
 </template>
 

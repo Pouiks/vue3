@@ -1,11 +1,19 @@
 <template>
 <h1>Veille techno</h1>
 <Form @add="saveTechno" /> 
+<br>
+<br>
+<ul>
+  <li v-for="tech in technos" :key="tech.id">
+    {{tech.techno}}
+  </li>
+</ul>
 </template>
 
 <script>
 
 import Form from '@/components/Form';
+import { ref } from 'vue';
 export default {
 
   name: 'App',
@@ -14,11 +22,16 @@ export default {
   },
 
   setup(){
+    let technos = ref([]);
+
     const saveTechno = (data) => {
       console.log("App | saveTechno() | data ", data);
+      technos.value = [...technos.value, {techno: data, id: Date.now()}]
+      console.log("App | saveTechno() | technos.value ", technos.value);
     }
     return {
-      saveTechno
+      saveTechno,
+      technos
     }
   }
 }
