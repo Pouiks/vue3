@@ -47,4 +47,8 @@ export default {
   margin-top: 60px;
 
 }
+
+ul{
+  list-style: none;
+}
 </style>
