@@ -1,10 +1,16 @@
 <template>
+<Header />
+
 <h1>Veille techno</h1>
 <Form @add="saveTechno" /> 
 <br>
 <br>
 
 <TechnoList :technos="technos" @delete-techno="deleteTechno" @edit-techno="editTechno"/>
+<br>
+<Article />
+<br>
+<Count  />
 
 </template>
 
@@ -12,16 +18,24 @@
 
 import Form from '@/components/Form';
 import TechnoList from '@/components/TechnoList';
+import Count from '@/components/Count';
+import Header from '@/components/Header';
+import Article from '@/components/Article';
 import { ref } from 'vue';
 export default {
 
   name: 'App',
   components: {
     Form,
-    TechnoList
+    TechnoList,
+    Count,
+    Header,
+    Article,
   },
 
   setup(){
+
+
     const editTechno = (tech) => {
       technos.value = technos.value.map(t => t.id !== tech.id ? t : tech);
     }
@@ -43,7 +57,8 @@ export default {
       saveTechno,
       technos,
       deleteTechno,
-      editTechno
+      editTechno,
+      Article
 
     }
   }
@@ -57,7 +72,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  width: 50%;
+  width: 100%;
   margin: 0 auto;
 
 }
