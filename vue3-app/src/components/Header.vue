@@ -1,12 +1,10 @@
 <template>
   <nav>
-    <router-link to="/" >Home</router-link>
-    <router-link to="/articles" >articles</router-link>
-    <router-link to="/technos" >technos</router-link>
+    <a to="/">Home</a>
+    <a to="/articles">articles</a>
+    <a to="/technos">technos</a>
+ </nav>
 
-
-
-  </nav>
 </template>
 
 <script>
@@ -25,7 +23,7 @@ nav{
     align-items:center;
 
 }
-nav a{
+a{
     text-decoration: none;
     margin: 2rem 2rem;
     color: #fff;
