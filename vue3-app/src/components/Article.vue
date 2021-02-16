@@ -34,11 +34,8 @@ export default {
         couleur: "verte",
     }
 ];
-    let tryaaaa = () => {
-      console.log(data);
-    };
+
     return {
-      tryaaaa,
       data
     };
   },
