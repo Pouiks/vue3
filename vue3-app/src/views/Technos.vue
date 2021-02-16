@@ -16,7 +16,7 @@ import TechnoList from '@/components/TechnoList';
 import { ref } from 'vue';
 export default {
 
-  name: 'App',
+  name: 'Technos',
   components: {
     Form,
     TechnoList,

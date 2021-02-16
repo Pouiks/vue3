@@ -3,8 +3,8 @@
 <div>
     <nav>
       <router-link to="/" >Home</router-link>
-      <router-link to="/article" >articles</router-link>
-      <router-link to="/technos" >technos</router-link>
+      <router-link :to="{name : 'Articles'}" >articles</router-link>
+      <router-link :to="{name : 'Technos'}" >technos</router-link>
     </nav>
  </div>
  <router-view/>
@@ -47,6 +47,9 @@ a{
     font-size:1.5em;
     padding: 0 2rem;
     text-decoration: none;
+}
+a.router-link-exact-active{
+  color: #000;
 }
 
 </style>

@@ -11,6 +11,7 @@
 
 <script>
 export default {
+    name : 'Article',
   setup() {
      let data = [ 
     {
