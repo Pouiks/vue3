@@ -3,7 +3,7 @@
         <div class="article-card" v-for="item in data" :key="item.id">
         <h3>{{ item.name }}</h3>
         <p>{{ item.couleur }}</p>
-        <button @click="tryaaaa">Voir l'article</button>
+        <router-link :to="{name: 'ArticleDetails', params: {id: item.id}}" class="article-link">Aller voir</router-link>
         </div>
     </div>
 
@@ -13,33 +13,32 @@
 export default {
     name : 'Article',
   setup() {
-     let data = [ 
-    {
-        id: 1,
-        name: "Vetement homme",
-        couleur: "verte",
-    },
-    {
-        id: 2,
-        name: "Vetement Femme",
-        couleur: "rouge",
-    },
-    {
-        id: 3,
-        name: "Enfant",
-        couleur: "verte",
-    },
-    {
-        id: 4,
-        name: "Chaussure",
-        couleur: "verte",
-    }
-];
+     return{
 
-    return {
-      data
-    };
-  },
+      data : [ 
+        {
+            id: 1,
+            name: "Vetement homme",
+            couleur: "verte",
+        },
+        {
+            id: 2,
+            name: "Vetement Femme",
+            couleur: "rouge",
+        },
+        {
+            id: 3,
+            name: "Enfant",
+            couleur: "verte",
+        },
+        {
+            id: 4,
+            name: "Chaussure",
+            couleur: "verte",
+        }
+    ]};
+
+},
 };
 </script>
 <style>
@@ -62,5 +61,10 @@ export default {
     }
     .article-card:hover{
     transform: scale(1.015);
+    }
+    .article-link{
+        background-color: #B33B3B;
+        padding:10px 5px;
+        font-size: 15px;
     }
 </style>
