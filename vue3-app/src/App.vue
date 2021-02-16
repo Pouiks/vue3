@@ -1,7 +1,15 @@
 <template>
-<Header />
+<!-- <Header /> -->
+<div>
+    <nav>
+      <router-link to="/" >Home</router-link>
+      <router-link to="/article" >articles</router-link>
+      <router-link to="/technos" >technos</router-link>
+    </nav>
+ </div>
+ <router-view/>
 
-<h1>Veille techno</h1>
+<!-- <h1>Veille techno</h1>
 <Form @add="saveTechno" /> 
 <br>
 <br>
@@ -10,27 +18,27 @@
 <br>
 <Article />
 <br>
-<Count  />
+<Count  /> -->
 
 </template>
 
 <script>
 
-import Form from '@/components/Form';
-import TechnoList from '@/components/TechnoList';
-import Count from '@/components/Count';
-import Header from '@/components/Header';
-import Article from '@/components/Article';
+// import Form from '@/components/Form';
+// import TechnoList from '@/components/TechnoList';
+// import Count from '@/components/Count';
+// // import Header from '@/components/Header';
+// import Article from '@/components/Article';
 import { ref } from 'vue';
 export default {
 
   name: 'App',
   components: {
-    Form,
-    TechnoList,
-    Count,
-    Header,
-    Article,
+    // Form,
+    // TechnoList,
+    // Count,
+    // // Header,
+    // Article,
   },
 
   setup(){
@@ -58,7 +66,7 @@ export default {
       technos,
       deleteTechno,
       editTechno,
-      Article
+      // Article
 
     }
   }
@@ -75,6 +83,23 @@ export default {
   width: 100%;
   margin: 0 auto;
 
+}
+nav{
+    width: 100%;
+    height:50px;
+    display: flex;
+    flex-direction:row;
+    background-color: rgb(179, 59, 59);
+    justify-content:flex-end;
+    align-items:center;
+
+}
+a{
+    text-decoration: none;
+    color: #fff;
+    font-size:1.5em;
+    padding: 0 2rem;
+    text-decoration: none;
 }
 
 </style>
